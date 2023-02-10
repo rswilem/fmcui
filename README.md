@@ -3,10 +3,14 @@
 This is the FMCUI repository, the library to ease development for the **Zibo B737-800X (ZIBO mod)** in X-Plane.
 FMCUI aims to ease the development by providing high level functions to write information and gather actions by the user.
 
+
+
 ## Concept
 
 FMCUI uses the concept of Screens, a single .lua file that contains information for the specific screen. This way, all code is seperated nicely and will not interfere with other screens.
 Since I think Zibo did a superb job on the FMC already, I did not want to remove any functionality. I have hijacked the _menu_ screen (main screen on startup) and rewrote the <DLNK menu's.
+
+![Screenshot 2023-01-29 at 10 56 31](https://user-images.githubusercontent.com/18720368/218189676-d0da9912-4156-41da-85fb-ab7cf8f6f418.png)
 
 ## Roadmap
 
@@ -19,13 +23,15 @@ Since I think Zibo did a superb job on the FMC already, I did not want to remove
 - [x] Implement weather request for X-Plane 12 (Fixes "NO METAR DATA")
 - [ ] Implement weather request for X-Plane 11 (metar.rwx)
 - [ ] Implement more ACARS screens
+- [ ] Add networking to talk to OPS (via GPT api?)
 
 ## Installation
 
-1. FMCUI files in the `.../X-Plane 12/Aircraft/B737-800X/plugins/xlua/scripts/B738.a_fms/` directory
-2. Alter the `B738.a_fms.lua` file, scroll to the bottom where it says "SUB-MODULE PROCESSING".
-3. Add the following line: `dofile("fmcui/main.lua") -- Load FMCUI extension`
-4. Make sure the line is **not commented out**. The line should **not** start with two dashes `--`, it should start with `dofile` instead.
+1. Go to the `.../X-Plane 12/Aircraft/B737-800X/plugins/xlua/scripts/B738.a_fms/` directory and create a folder named `fmcui` there.
+2. Place all the FMCUI files (download repository as zip, and unextract) in the `.../X-Plane 12/Aircraft/B737-800X/plugins/xlua/scripts/B738.a_fms/fmcui` directory
+3. Alter the `B738.a_fms.lua` file (that should've been there by default), scroll to the bottom where it says "SUB-MODULE PROCESSING".
+4. Add the following line: `dofile("fmcui/main.lua") -- Load FMCUI extension`
+5. Make sure the line is **not commented out**. The line should **not** start with two dashes `--`, it should start with `dofile` instead.
 
 ## Creating a screen
 
